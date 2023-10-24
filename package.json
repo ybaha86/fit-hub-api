@@ -1,0 +1,19 @@
+{
+  "name": "fit-hub-api",
+  "version": "1.0.0",
+  "description": "tes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.3.2",
+    "cypress-plugin-api": "^2.11.1",
+    "cypress-real-events": "^1.10.3",
+    "cypress-wait-until": "^2.0.1"
+  }
+}
