@@ -1,11 +1,11 @@
-Prerequisites
+## Pre-requisites
 Node.js: Ensure you have Node.js installed on your system. 
 You can download it from nodejs.org.
 
-Installation
+## Installation
 1. Clone this repository to your local machine:
 
-git clone https://github.com/your-username/your-cypress-project.git
+git clone https://github.com/ybaha86/fit-hub-api.git
 
 2. Navigate to the project directory:
 
@@ -14,9 +14,8 @@ cd your-cypress-project
 3. Install project dependencies:
 npm install
 4. Running Tests
-To run Cypress tests, follow these steps:
-a. Open the Cypress Test Runner:
-npx cypress open
-This command will open the Cypress Test Runner, a graphical interface for managing and running tests.
-Click on a test file in the Cypress Test Runner to execute the tests.
+
+-- npx cypress open
+-- This command will open the Cypress Test Runner, a graphical interface for managing and running tests.
+-- Click on a test file in the Cypress Test Runner to execute the tests.
 
