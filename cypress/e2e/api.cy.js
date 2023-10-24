@@ -1,30 +1,48 @@
 describe('API Test Example', () => {
-  it('Makes an API request and checks the response', () => {
+
+  it('List Users', () => {
     cy.request({
       method: 'GET',
-      url: 'https://jsonplaceholder.typicode.com/posts/1',
+      url: 'https://reqres.in/api/users?page=1',
     }).then((response) => {
       expect(response.status).to.equal(200); // Check the response status code
-      expect(response.body).to.have.property('userId', 1); // Check a specific property in the response
-      expect(response.body).to.have.property('id', 1);
-      expect(response.body).to.have.property('title');
-      expect(response.body).to.have.property('body');
+      expect(response.body).to.have.property('page', 1); // Check a specific property in the response
+      expect(response.body).to.have.property('per_page', 6); // Check a specific property in the response
+      expect(response.body).to.have.property('total'); // Check the response body
+      expect(response.body).to.have.property('total_pages'); // Check the response body
     });
   });
 
-  it('Makes another API request', () => {
+  it('Create Users', () => {
     cy.request({
       method: 'POST',
-      url: 'https://jsonplaceholder.typicode.com/posts',
+      url: 'https://reqres.in/api/users',
       body: {
-        title: 'foo',
-        body: 'bar',
-        userId: 1,
-      },
+        name:'morpheus',
+        job:'leader'
+      }
     }).then((response) => {
-      expect(response.status).to.equal(201); // Check for a successful POST request status code
-      expect(response.body).to.have.property('title', 'foo'); // Check the response body
-      expect(response.body).to.have.property('body', 'bar');
+      expect(response.status).to.equal(201); // Check the response status code
+      expect(response.body).to.have.property('name', 'morpheus'); // Check a specific property in the response
+      expect(response.body).to.have.property('job', 'leader'); // Check a specific property in the response
+      expect(response.body).to.have.property('id'); // Check the response body
+      expect(response.body).to.have.property('createdAt'); // Check the response body
     });
   });
+
+  it('Register Users', () => {
+    cy.request({
+      method: 'POST',
+      url: 'https://reqres.in/api/register',
+      body: {
+        email:'eve.holt@reqres.in',
+        password:'pistol'
+      }
+    }).then((response) => {
+      expect(response.status).to.equal(200); // Check the response status code
+      expect(response.body).to.have.property('id'); // Check the response body
+      expect(response.body).to.have.property('token'); // Check the response body
+    });
+  });
+
 });
